@@ -1,7 +1,7 @@
 import { Section_1 } from "./sections.jsx";
 import Cv from "./Cv.jsx";
 import { useState } from "react";
-
+import { footer } from "./footer.jsx"
 export default function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ export default function App() {
   };
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>CV Maker</h1>
+      <h1 className="Title">CV Maker</h1>
       <div className="main">
         <div className="Sections">
           <Section_1
@@ -34,9 +34,9 @@ export default function App() {
         </div>
         <div className="CV_container">
           <h2 style={{ textDecoration: "underline" }}>My cv</h2>
-
-          <Cv name={""} email={""} phone={""} />
+          <Cv name={name} email={email} phone={phone} />
         </div>
+        <footer />
       </div>
     </>
   );
