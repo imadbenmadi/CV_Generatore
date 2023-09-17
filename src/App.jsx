@@ -6,6 +6,7 @@ export default function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [count, setCount] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -20,7 +21,7 @@ export default function App() {
   };
   return (
     <>
-      <h1 style={{textAlign : "center"}}>CV Maker</h1>
+      <h1 style={{ textAlign: "center" }}>CV Maker</h1>
       <div className="main">
         <div className="Sections">
           <Section_1
@@ -31,10 +32,28 @@ export default function App() {
             onEmailChange={handleEmailChange}
             onPhoneChange={handlePhoneChange}
           />
+          <button
+            onClick={() => {
+              setCount(true);
+            }}
+          >
+            save
+          </button>
+          <button
+            onClick={() => {
+              setCount(false);
+            }}
+          >
+            clear
+          </button>
         </div>
         <div className="CV_container">
           <h2 style={{ textDecoration: "underline" }}>My cv</h2>
-          <Cv name={name} email={email} phone={phone} />
+          {count ? (
+            <Cv name={name} email={email} phone={phone} />
+          ) : (
+            <Cv name={""} email={""} phone={""} />
+          )}
         </div>
       </div>
     </>
