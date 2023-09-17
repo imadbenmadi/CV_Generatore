@@ -6,7 +6,6 @@ export default function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [count, setCount] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -32,28 +31,11 @@ export default function App() {
             onEmailChange={handleEmailChange}
             onPhoneChange={handlePhoneChange}
           />
-          <button
-            onClick={() => {
-              setCount(true);
-            }}
-          >
-            save
-          </button>
-          <button
-            onClick={() => {
-              setCount(false);
-            }}
-          >
-            clear
-          </button>
         </div>
         <div className="CV_container">
           <h2 style={{ textDecoration: "underline" }}>My cv</h2>
-          {count ? (
-            <Cv name={name} email={email} phone={phone} />
-          ) : (
-            <Cv name={""} email={""} phone={""} />
-          )}
+
+          <Cv name={""} email={""} phone={""} />
         </div>
       </div>
     </>
