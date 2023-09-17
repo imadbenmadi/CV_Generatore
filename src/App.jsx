@@ -19,22 +19,24 @@ export default function App() {
     setPhone(e.target.value);
   };
   return (
-    <div className="main">
-      <div className="Sections">
-        <h1>CV Maker</h1>
-        <Section_1
-          name={name}
-          email={email}
-          phone={phone}
-          onNameChange={handleNameChange}
-          onEmailChange={handleEmailChange}
-          onPhoneChange={handlePhoneChange}
-        />
+    <>
+      <h1 style={{textAlign : "center"}}>CV Maker</h1>
+      <div className="main">
+        <div className="Sections">
+          <Section_1
+            name={name}
+            email={email}
+            phone={phone}
+            onNameChange={handleNameChange}
+            onEmailChange={handleEmailChange}
+            onPhoneChange={handlePhoneChange}
+          />
+        </div>
+        <div className="CV_container">
+          <h2 style={{ textDecoration: "underline" }}>My cv</h2>
+          <Cv name={name} email={email} phone={phone} />
+        </div>
       </div>
-      <div className="CV_container">
-        <h2 style={{ textDecoration: "underline" }}>My cv</h2>
-        <Cv name={name} email={email} phone={phone} />
-      </div>
-    </div>
+    </>
   );
 }
