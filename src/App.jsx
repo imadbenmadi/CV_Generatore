@@ -20,6 +20,12 @@ export default function App() {
   const handlePhoneChange = (e) => {
     setPhone(e.target.value);
   };
+  const handlePlaceChange = (e) => {
+    setPlace(e.target.value);
+  };
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
   return (
     <>
       <h1 className="Title">CV Maker</h1>
@@ -34,10 +40,12 @@ export default function App() {
             onNameChange={handleNameChange}
             onEmailChange={handleEmailChange}
             onPhoneChange={handlePhoneChange}
+            onPlaceChange={handlePlaceChange}
+            onTitleChange={handleTitleChange}
           />
         </div>
         <div className="CV_container">
-          <Cv name={name} email={email} phone={phone} />
+          <Cv name={name} email={email} phone={phone} title={title} place={place} />
         </div>
       </div>
       <Footer />

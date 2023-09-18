@@ -3,9 +3,13 @@ export function Section_1({
   name,
   email,
   phone,
+  title,
+  place,
   onNameChange,
   onEmailChange,
   onPhoneChange,
+  onTitleChange,
+  onPlaceChange,
 }) {
   function handleKeyPress(e) {
     const allowedKeys = /[\d]|Backspace/;
@@ -18,7 +22,7 @@ export function Section_1({
   }
 
   return (
-    <div className="section_1">
+    <div className="section_1" >
       <form>
         <input
           type="text"
@@ -28,9 +32,15 @@ export function Section_1({
         />
         <input
           type="text"
-          placeholder="Yor name"
-          value={name}
-          onChange={onNameChange}
+          placeholder="title"
+          value={title}
+          onChange={onTitleChange}
+        />
+        <input
+          type="text"
+          placeholder="place"
+          value={place}
+          onChange={onPlaceChange}
         />
         <input
           type="email"
