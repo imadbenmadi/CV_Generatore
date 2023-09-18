@@ -1,11 +1,13 @@
 import { Section_1 } from "./sections.jsx";
 import Cv from "./Cv.jsx";
 import { useState } from "react";
-import { footer } from "./footer.jsx"
+import Footer from "./footer.jsx";
 export default function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [place, setPlace] = useState("");
+  const [title, setTitle] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -27,17 +29,18 @@ export default function App() {
             name={name}
             email={email}
             phone={phone}
+            place={place}
+            title={title}
             onNameChange={handleNameChange}
             onEmailChange={handleEmailChange}
             onPhoneChange={handlePhoneChange}
           />
         </div>
         <div className="CV_container">
-          <h2 style={{ textDecoration: "underline" }}>My cv</h2>
           <Cv name={name} email={email} phone={phone} />
         </div>
-        <footer />
       </div>
+      <Footer />
     </>
   );
 }

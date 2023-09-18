@@ -17,10 +17,15 @@ export function Section_1({
     }
   }
 
-
   return (
     <div className="section_1">
       <form>
+        <input
+          type="text"
+          placeholder="Yor name"
+          value={name}
+          onChange={onNameChange}
+        />
         <input
           type="text"
           placeholder="Yor name"
