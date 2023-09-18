@@ -21,6 +21,18 @@ a {
 a:visited {
   color: var(--main-color);
 }
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
 hr {
   border-width: 2px;
   border-color: var(--main-color);
@@ -123,6 +135,18 @@ input {
   max-width: 270px;
 }
 
+
+
+
+
+.buttons{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.buttons button{
+    flex: 33.33%;
+}
 .footer {
   height: 60px;
   background-color: var(--main-bg);

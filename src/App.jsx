@@ -43,9 +43,59 @@ export default function App() {
             onPlaceChange={handlePlaceChange}
             onTitleChange={handleTitleChange}
           />
+          <div className="buttons">
+            <button
+              onClick={() => {
+                setName("Imad");
+                setEmail("imad@gmail.com");
+                setPhone("0655221133");
+                setPlace("Ouargla");
+                setTitle("Front-End Dev");
+              }}
+              style={{
+                background: "#ffffff8a",
+              }}
+            >
+              Load Example
+            </button>
+            <button
+              onClick={() => {
+                setName("");
+                setEmail("");
+                setPhone("");
+                setPlace("");
+                setTitle("");
+              }}
+              style={{
+                background: "#ff0000a6",
+              }}
+            >
+              Clear
+            </button>
+            <button
+              onClick={() => {
+                setName("");
+                setEmail("");
+                setPhone("");
+                setPlace("");
+                setTitle("");
+              }}
+              style={{
+                background: "#00ff005c",
+              }}
+            >
+              Print
+            </button>
+          </div>
         </div>
         <div className="CV_container">
-          <Cv name={name} email={email} phone={phone} title={title} place={place} />
+          <Cv
+            name={name}
+            email={email}
+            phone={phone}
+            title={title}
+            place={place}
+          />
         </div>
       </div>
       <Footer />
