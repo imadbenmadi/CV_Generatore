@@ -26,7 +26,7 @@ export default function App() {
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
-  return (
+   return (
     <>
       <h1 className="Title">CV Maker</h1>
       <div className="main">
@@ -73,12 +73,8 @@ export default function App() {
               Clear
             </button>
             <button
-              onClick={() => {
-                setName("");
-                setEmail("");
-                setPhone("");
-                setPlace("");
-                setTitle("");
+               onClick={() => {
+                 window.print()
               }}
               style={{
                 background: "#00ff005c",
